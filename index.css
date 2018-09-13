@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body	{
+	background-color: #4ed3ca;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 10px;
+}
+
+.sticky + .content {
+  top: 60px;
+}
+nav {
+    text-decoration: none;
+    border: solid; 
+    border-width: 4px;
+    background-color: grey;
+    opacity: 0.7;
+    padding: 8px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+h1	{
+	text-align: center;
+}
