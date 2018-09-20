@@ -59,6 +59,10 @@ html,body{
 	margin:0;
 	padding: 20px;
 }
+p{
+	height:100%;
+	width:50%;
+}
 
 .dot_nav{
     margin-right:15px;
