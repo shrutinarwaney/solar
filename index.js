@@ -5,7 +5,7 @@ $(document).ready(function() {
     e.preventDefault();
     $('body,html').animate({
       scrollTop: $(this.hash).offset().top
-    }, 1000 );
+    }, 500 );
   });
 
 
@@ -20,11 +20,10 @@ $(document).ready(function() {
 	scrollANIMATE.each(function(){
   		var slidePosition = $(this.hash).offset().top
 
-  		if(scrollPosition <= slidePosition){
-  			$(".scrollingNAV.selected").removeClass("selected");
-  			$(this).addClass('selected');
+  		if(scrollPosition >= slidePosition){
+        $('.dot_a').removeClass('selected');
+        $(this).addClass('selected');
   		}
-
   		});
 
   	});
