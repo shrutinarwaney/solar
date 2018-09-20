@@ -14,9 +14,11 @@ html,body{
 }
 
 .top_a{
-	margin-right:20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 	text-decoration: none;
-
 	font-family: 'Roboto', sans-serif;
 	line-height:1px
 }
@@ -61,12 +63,18 @@ html,body{
     display: block;
     margin: 14px auto;
     position: relative;
+    text-decoration:none;
+    color:black;
 }
 .dot_a:hover{
 	background-color: transparent;
 }
 .dot_a:hover .tooltip{
 	visibility: visible;
+}
+
+.selected_a{
+	
 }
 
 .selected{
