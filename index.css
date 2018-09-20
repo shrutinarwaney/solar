@@ -18,6 +18,10 @@ html,body{
 	background-color: white;
 }
 
+.logo{
+	margin-left:40px;	
+}
+
 .top_move{
 	float:right;
 	right:20px;
