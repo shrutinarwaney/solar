@@ -13,6 +13,11 @@ html,body{
 	background-color: white;
 }
 
+.top_move{
+	float:right;
+	right:20px;
+}
+
 .top_a{
 	padding-top: 15px;
 	padding-bottom: 20px;
