@@ -78,7 +78,7 @@ html,body{
 }
 
 .selected_a{
-	
+	border-top:2px solid black;
 }
 
 .selected{
