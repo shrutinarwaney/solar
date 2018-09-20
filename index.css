@@ -21,6 +21,8 @@ html,body{
 .top_move{
 	float:right;
 	right:20px;
+	margin-bottom: 20px;
+    	position: absolute;
 }
 
 .top_a{
