@@ -18,7 +18,7 @@ $(document).ready(function() {
   	var scrollPosition = $(this).scrollTop();
 
 	scrollANIMATE.each(function(){
-  		var slidePosition = $(this.hash).offset().top
+  		var slidePosition = $(this.hash).offset().top - 103.2
 
   		if(scrollPosition >= slidePosition){
         $('.dot_a').removeClass('selected');
