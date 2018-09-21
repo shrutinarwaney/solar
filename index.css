@@ -10,6 +10,7 @@ html,body{
 	height: 100%;
 }
 
+
 .top_nav{
 	position:fixed;
 	width: 100%;
@@ -24,6 +25,9 @@ html,body{
     	margin-bottom: -20px;	
 }
 
+.nav_int{
+	font-size:30px;
+}
 .top_move{
 	float:right;
 	right:80px;
@@ -45,6 +49,7 @@ html,body{
 .top_a:hover{
 	border-top:5px solid black;
 }
+
 
 .background{
 	background-image: url("cleansolar.jpg");
