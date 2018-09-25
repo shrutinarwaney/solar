@@ -4,7 +4,7 @@ $(document).ready(function() {
   scrollANIMATE.click(function(e) {
     e.preventDefault();
     $('body,html').animate({
-      scrollTop: $(this.hash).offset().top
+      scrollTop: $(this.hash).offset().top - 103.2
     }, 500 );
   });
 
