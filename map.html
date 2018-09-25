@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Tweets from Daoguang Emperor</title>
+			<link rel="stylesheet" href="insta.css">
+			<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script>
+			var map;
+			function displayMap()
+			{
+				var location = new google.maps.LatLng( 33.4196274,-112.0718709 );
+				var options = { zoom: 13, center: location, mapTypeId: google.maps.MapTypeId.ROADMAP };
+				var map = new google.maps.Map( document.getElementById( 'map_canvas' ), options );
+				
+				var factory_location = new google.maps.LatLng( 33.4196274,-112.0718709 );
+				var factory_marker = new google.maps.Marker( { position: factory_location, map: map, title: "Our Factory Location"});
+				var factory_infoWindow = new google.maps.InfoWindow( { content: "<p>We chose this location for our factory because it is in Phoenix, Arizona, so it has access to plentiful sunlight. It is also positioned by the Salt River, so we have access to hydropower as well. </p>" });
+				google.maps.event.addListener( factory_marker, 'click', function() { factory_infoWindow.open( map, factory_marker );});
+			}
+			
+			
+			function showPosition()
+			{
+				if( navigator.geolocation )
+					navigator.geolocation.getCurrentPosition( displayPosition, displayError );
+				else
+					alert( "Geolocation is not supported on this web browser" );
+			}
+			
+			function displayPosition( Position )
+			{
+				var message = "Latitude = " + Position.coords.latitude;
+				message += " Longitude = " + Position.coords.longitude;
+				message += " Accuracy = " + Position.coords.accuracy + " meters";
+				alert( message );
+			}
+			
+			
+		</script>
+		</head>
+			<body onload="displayMap()">
+				<div id="map_canvas" style="width: 640px; height:480px;" > </div>
+		</body>
+	</html>
