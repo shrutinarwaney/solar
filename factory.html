@@ -8,8 +8,41 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="index.js"></script>
 	<link rel="icon" href="https://image.flaticon.com/icons/png/512/63/63720.png" type="image/gif" sizes="16x16">
+	<script>
+			var map;
+			function displayMap()
+			{
+				var location = new google.maps.LatLng( 33.4196274,-112.0718709 );
+				var options = { zoom: 13, center: location, mapTypeId: google.maps.MapTypeId.ROADMAP };
+				var map = new google.maps.Map( document.getElementById( 'map_canvas' ), options );
+				
+				var factory_location = new google.maps.LatLng( 33.4196274,-112.0718709 );
+				var factory_marker = new google.maps.Marker( { position: factory_location, map: map, title: "Our Factory Location"});
+				var factory_infoWindow = new google.maps.InfoWindow( { content: "<p>We chose this location for our factory because it is in Phoenix, Arizona, so it has access to plentiful sunlight. It is also positioned by the Salt River, so we have access to hydropower as well. </p>" });
+				google.maps.event.addListener( factory_marker, 'click', function() { factory_infoWindow.open( map, factory_marker );});
+			}
+			
+			
+			function showPosition()
+			{
+				if( navigator.geolocation )
+					navigator.geolocation.getCurrentPosition( displayPosition, displayError );
+				else
+					alert( "Geolocation is not supported on this web browser" );
+			}
+			
+			function displayPosition( Position )
+			{
+				var message = "Latitude = " + Position.coords.latitude;
+				message += " Longitude = " + Position.coords.longitude;
+				message += " Accuracy = " + Position.coords.accuracy + " meters";
+				alert( message );
+			}
+			
+			
+		</script>
 </head>
-<body>
+<body onload="displayMap()">
 	<nav class="top_nav">
 		<div class="logo">
 			<h1 id="logohead">S | S | F</h1>
@@ -26,7 +59,8 @@
 	<nav class="dot_nav">
 		<a href="#ct1" class="selected dot_a"><div class="tooltip">Start</div></a>
 		<a href="#ct2" class="dot_a"><div class="tooltip">Factory</div></a>
-		<a href="#ct2" class="dot_a"><div class="tooltip">Calculation</div></a>
+		<a href="#ct3" class="dot_a"><div class="tooltip">Why We Chose the Location</div></a>
+		<a href="#ct4" class="dot_a"><div class="tooltip">Calculation</div></a>
 	</nav>
 	<div class="background ct" id="ct1"></div>
 
@@ -74,6 +108,10 @@
 </p>
 	</div>
 	<div class="content ct" id="ct3">
+		<p>whatever</p>
+		<div id="map_canvas" style="width: 640px; height:480px;" > </div>
+	</div>
+	<div class="content ct" id="ct4">
 		<h1>Calculation</h1>
 		<p>
 		<h3>Kinetic Energy Calculation of Hydropower</h3>
